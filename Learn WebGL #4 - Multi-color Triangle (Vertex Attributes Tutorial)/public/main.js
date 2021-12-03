@@ -89,4 +89,4 @@ gl.useProgram(program);
 gl.drawArrays(gl.TRIANGLES, 0, 3);  
 
 console.log("positionLocation: " + positionLocation);
-
+console.log("colorLocation: " + colorLocation);
