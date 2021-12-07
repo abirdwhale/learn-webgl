@@ -55,10 +55,11 @@
     // from the DOM and return the compiled shader
     function getShader(id) {
       const script = document.getElementById(id);
-      // console.log("script: " + script);
-      // console.log("script.text: " + script.text);
+      console.log("getShader script: " + script);
+      console.log("getShader script.text: " + script.text);
       const shaderString = script.text.trim();
-      // console.log("shaderString: " + shaderString);
+      console.log("getShader script.text.trim(): " + script.text.trim());
+      console.log("getShader shaderString: " + shaderString);
 
       // Assign shader depending on the type of shader
       let shader;
@@ -102,9 +103,11 @@
       gl.useProgram(program);
       // We attach the location of these shader values to the program instance
       // for easy access later in the code
-      // console.log("program: " + program);
-      // console.log("aVertexPosition: " + aVertexPosition);
+      console.log("useProgram program: " + program);
+      console.log("useProgram program.aVertexPosition: " + program.aVertexPosition);
+      console.log("useProgram gl.getAttribLocation: " + gl.getAttribLocation);
       program.aVertexPosition = gl.getAttribLocation(program, 'aVertexPosition');
+      console.log("useProgram program.aVertexPosition: " + program.aVertexPosition);
     }
 
     // Set up the buffers for the square
