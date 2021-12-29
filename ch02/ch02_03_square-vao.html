@@ -146,7 +146,7 @@
 
       // Provide instructions for VAO to use data later in draw
       gl.enableVertexAttribArray(program.aVertexPosition);
-      gl.vertexArribPointer(program.aVertexPosition, 3, gl.FLOAT, false, 0, 0);
+      gl.vertexAttribPointer(program.aVertexPosition, 3, gl.FLOAT, false, 0, 0);
 
       // Setting up the IBO
       squareIndexBuffer = gl.createBuffer();
@@ -168,11 +168,6 @@
       // Bind the VAO
       gl.bindVertexArray(squareVAO);
 
-      // Use the buffers we've constructed
-      gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexBuffer);
-      gl.vertexAttribPointer(program.aVertexPosition, 3, gl.FLOAT, false, 0, 0);
-      gl.enableVertexAttribArray(program.aVertexPosition);
-
       // Bind IBO
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, squareIndexBuffer);
 
@@ -180,6 +175,7 @@
       gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
 
       // Clean
+      gl.bindVertexArray(null);
       gl.bindBuffer(gl.ARRAY_BUFFER, null);
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
     }
