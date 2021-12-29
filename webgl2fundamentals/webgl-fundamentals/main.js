@@ -10,8 +10,10 @@ const vertexShaderSource = `#version 300 es
  
 // an attribute is an input (in) to a vertex shader.
 // It will receive data from a buffer
-in vec4 a_position;
- 
+in vec2 a_position;
+
+uniform vec2 u-resolution;
+
 // all shaders have a main function
 void main() {
  
